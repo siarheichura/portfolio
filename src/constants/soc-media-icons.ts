@@ -7,7 +7,7 @@ export interface SocMediaIcon {
 export const SOC_MEDIA_ICONS: SocMediaIcon[] = [
   {
     name: 'linkedin',
-    url: 'https://www.linkedin.com/in/sergei-chura-3a4708215/',
+    url: 'https://www.linkedin.com/in/siarhei-chura-3a4708215',
     icon: 'fa7-brands:linkedin-in',
   },
   {
