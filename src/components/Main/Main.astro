@@ -1,0 +1,293 @@
+---
+import './Main.scss';
+import { Icon } from 'astro-icon/components';
+
+const BACKGROUND_ICON_CONFIGS = [
+  {
+    icon: 'mdi:account-school-outline',
+    top: '8%',
+    left: '10%',
+    rotate: '-15deg',
+    xx: 1.4,
+    xy: -0.6,
+    color: '#EF4444',
+  },
+  {
+    icon: 'mdi:pig-variant-outline',
+    top: '18%',
+    left: '32%',
+    rotate: '20deg',
+    xx: -0.7,
+    xy: 1.5,
+    color: '#F97316',
+  },
+  {
+    icon: 'mdi:music-note-eighth',
+    top: '12%',
+    left: '55%',
+    rotate: '-25deg',
+    xx: 1.1,
+    xy: -1.4,
+    color: '#EAB308',
+  },
+  {
+    icon: 'mdi:glasses',
+    top: '22%',
+    left: '78%',
+    rotate: '10deg',
+    xx: -1.3,
+    xy: 0.4,
+    color: '#84CC16',
+  },
+  {
+    icon: 'mdi:alarm',
+    top: '30%',
+    left: '15%',
+    rotate: '30deg',
+    xx: 0.6,
+    xy: -1.6,
+    color: '#10B981',
+  },
+  {
+    icon: 'mdi:emoticon-happy-outline',
+    top: '28%',
+    left: '50%',
+    rotate: '-18deg',
+    xx: 1.5,
+    xy: 0.8,
+    color: '#14B8A6',
+  },
+  {
+    icon: 'mdi:skull-outline',
+    top: '35%',
+    left: '85%',
+    rotate: '12deg',
+    xx: -1.1,
+    xy: 1.2,
+    color: '#06B6D4',
+  },
+  {
+    icon: 'mdi:controller-classic-outline',
+    top: '42%',
+    left: '68%',
+    rotate: '-22deg',
+    xx: 1.8,
+    xy: -0.7,
+    color: '#0EA5E9',
+  },
+  {
+    icon: 'mdi:image-filter-drama-outline',
+    top: '46%',
+    left: '38%',
+    rotate: '15deg',
+    xx: -0.9,
+    xy: 1.4,
+    color: '#3B82F6',
+  },
+  {
+    icon: 'mdi:anchor',
+    top: '50%',
+    left: '90%',
+    rotate: '-10deg',
+    xx: 0.7,
+    xy: -1.2,
+    color: '#6366F1',
+  },
+  {
+    icon: 'mdi:dog',
+    top: '55%',
+    left: '10%',
+    rotate: '25deg',
+    xx: -1.4,
+    xy: 0.3,
+    color: '#8B5CF6',
+  },
+  {
+    icon: 'mdi:fish',
+    top: '60%',
+    left: '45%',
+    rotate: '-30deg',
+    xx: 1.2,
+    xy: -1.3,
+    color: '#A855F7',
+  },
+  {
+    icon: 'mdi:umbrella-outline',
+    top: '62%',
+    left: '70%',
+    rotate: '18deg',
+    xx: -0.5,
+    xy: 1.7,
+    color: '#D946EF',
+  },
+  {
+    icon: 'mdi:sun-wireless-outline',
+    top: '68%',
+    left: '25%',
+    rotate: '-12deg',
+    xx: 0.9,
+    xy: 1.1,
+    color: '#EC4899',
+  },
+  {
+    icon: 'mdi:skateboard',
+    top: '72%',
+    left: '88%',
+    rotate: '35deg',
+    xx: -1.7,
+    xy: -0.4,
+    color: '#F43F5E',
+  },
+  {
+    icon: 'mdi:sword-cross',
+    top: '78%',
+    left: '12%',
+    rotate: '5deg',
+    xx: 1.6,
+    xy: -1.1,
+    color: '#22C55E',
+  },
+  {
+    icon: 'mdi:shoe-formal',
+    top: '82%',
+    left: '40%',
+    rotate: '-28deg',
+    xx: -0.8,
+    xy: 1.3,
+    color: '#A3E635',
+  },
+  {
+    icon: 'mdi:wallet-outline',
+    top: '86%',
+    left: '65%',
+    rotate: '14deg',
+    xx: 1.4,
+    xy: -0.5,
+    color: '#FACC15',
+  },
+  {
+    icon: 'mdi:lightbulb-on-outline',
+    top: '90%',
+    left: '20%',
+    rotate: '-22deg',
+    xx: -1.2,
+    xy: 0.9,
+    color: '#FB923C',
+  },
+  {
+    icon: 'mdi:heart-outline',
+    top: '92%',
+    left: '50%',
+    rotate: '8deg',
+    xx: 0.5,
+    xy: -1.6,
+    color: '#F87171',
+  },
+  {
+    icon: 'mdi:star-outline',
+    top: '95%',
+    left: '85%',
+    rotate: '-15deg',
+    xx: -1.4,
+    xy: 1,
+    color: '#22D3EE',
+  },
+  {
+    icon: 'mdi:rocket-launch-outline',
+    top: '97%',
+    left: '70%',
+    rotate: '25deg',
+    xx: 1.3,
+    xy: -0.8,
+    color: '#4ADE80',
+  },
+];
+
+const SOC_MEDIA_SVG = [
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/sergei-chura-3a4708215/',
+    icon: 'fa7-brands:linkedin-in',
+  },
+  {
+    name: 'github',
+    url: 'https://github.com/siarheichura',
+    icon: 'fa7-brands:github',
+  },
+  {
+    name: 'telegram',
+    url: 'https://t.me/seryyvolk',
+    icon: 'fa7-brands:telegram',
+  },
+  {
+    name: 'instagram',
+    url: 'https://www.instagram.com/serikvolk',
+    icon: 'fa7-brands:instagram',
+  },
+];
+---
+
+<div id="container">
+  <div class="bg">
+    {
+      BACKGROUND_ICON_CONFIGS.map((icon) => (
+        <Icon
+          class="bg__icon"
+          name={icon.icon}
+          data-xx={icon.xx}
+          data-xy={icon.xy}
+          data-rotate={icon.rotate}
+          style={`position:absolute;top:${icon.top};left:${icon.left};transform:rotate(${icon.rotate});color:${icon.color};`}
+        />
+      ))
+    }
+  </div>
+
+  <div class="soc-media">
+    {
+      SOC_MEDIA_SVG.map((icon) => (
+        <a
+          class="soc-media__icon"
+          href={icon.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={icon.name}
+        >
+          <Icon name={icon.icon} size="35" />
+        </a>
+      ))
+    }
+  </div>
+
+  <main>
+    <div class="info">
+      <span class="info__hey">👋 hey there,</span>
+      <span class="info__name">i'm Siarhei Chura</span>
+      <span class="info__job">
+        <span>a</span>
+        <span class="info__job-title">Software Engineer</span>
+        <span>mainly working with</span>
+        <span>Angular</span>
+      </span>
+    </div>
+  </main>
+</div>
+
+<script>
+  const icons = Array.from(document.querySelectorAll<HTMLElement>('.bg__icon'));
+
+  const onMove = (event: MouseEvent): void => {
+    const x = (window.innerWidth - event.pageX * 3) / 50;
+    const y = (window.innerHeight - event.pageY * 3) / 50;
+
+    icons.forEach((icon) => {
+      const xx = parseFloat(icon.dataset.xx || '0');
+      const xy = parseFloat(icon.dataset.xy || '0');
+      const rotate = icon.dataset.rotate || '0deg';
+
+      icon.style.transform = `translateX(${x * xx}px) translateY(${y * xy}px) rotate(${rotate})`;
+    });
+  };
+
+  document.addEventListener('mousemove', onMove);
+</script>
