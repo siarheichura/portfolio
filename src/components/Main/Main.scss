@@ -16,6 +16,8 @@ main {
 }
 
 .bg {
+  z-index: 1000;
+
   &__icon {
     position: absolute;
     opacity: 0.5;
@@ -29,6 +31,7 @@ main {
 }
 
 .info {
+  z-index: 2000;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -53,6 +56,7 @@ main {
 }
 
 .soc-media {
+  z-index: 2000;
   position: absolute;
   right: calc(50% - 100px);
   bottom: 3%;
